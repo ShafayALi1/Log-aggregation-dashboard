@@ -2,7 +2,7 @@
 
 A comprehensive log management system built with Django backend and Streamlit frontend. Designed for real-time log ingestion, analysis, and anomaly detection.
 
-## for superusercreation
+## for Superusercreation
 ## docker-compose exec backend python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin123')" 
 
 ## important steps notes made by me
