@@ -59,6 +59,14 @@ This builds and starts both containers:
 - Backend (Django) → `http://localhost:8000`
 - Frontend (Streamlit) → `http://localhost:8501`
 
+### Access Points
+
+| Service | URL |
+|---|---|
+| Dashboard (Streamlit) | http://localhost:8501 |
+| Backend API root | http://localhost:8000/api/ |
+| Django Admin | http://localhost:8000/admin/ |
+
 ### 2. Create a superuser (one-time)
 
 ```bash
