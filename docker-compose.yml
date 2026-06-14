@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: log-dashboard-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - db_data:/data
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=django-insecure-change-this-in-production
+      - ALLOWED_HOSTS=*
+      - DB_PATH=/data/db.sqlite3
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: log-dashboard-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://backend:8000/api
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:
